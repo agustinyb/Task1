@@ -8,37 +8,25 @@ import java.util.Scanner;
 @SpringBootApplication
 public class RuntimeApplication {
 
-    public static void main(String[] args) throws NoSuchMethodException {
+    public static void main(String[] args) throws InterruptedException {
         SpringApplication.run(RuntimeApplication.class, args);
 
-        Task task = new Task();
 
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Please, press 1 to calculate the time of response or 0 for exit");
         int number = keyboard.nextInt();
 
         if (number == 1) {
+            Task task = new Task();
+            task.welcome();
             task.TaskRunTime();
+
         }
 
-        //ByteBuddy byteBuddy = new ByteBuddy();
-
-        //Task task = new Task();
-        //task.TaskRunTime();
-
-        //ByteBuddy byteBuddy = new ByteBuddy();
-
-        //Method method = Task.class.getMethod("TaskRunTime");
-
-        //MethodDelegation methodDelegation = MethodDelegation.to(method);
-
-        //byteBuddy.redefine(Task.class).method("TaskRunTime").intercept(methodDelegation).make();
-
-        //task.TaskRunTime();
-
-
     }
+
 }
+
 
 
 
